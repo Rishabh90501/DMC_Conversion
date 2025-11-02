@@ -3,5 +3,12 @@ numpy
 seaborn
 matplotlib
 scikit-learn
+mysql-connector-python
+SQLAlchemy
+shap
+imblearn
+catboost
+xgboost
+scipy
 
 #-e .
