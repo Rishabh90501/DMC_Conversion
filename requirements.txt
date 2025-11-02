@@ -10,5 +10,6 @@ imblearn
 catboost
 xgboost
 scipy
+dill
 
 #-e .
