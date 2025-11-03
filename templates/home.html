@@ -17,31 +17,31 @@
 
                     <div class="mb-3">
                         <label class="form-label">Age</label>
-                        <input class="form-control" type="number" name="age" placeholder="Enter your Age" min='0' required />
+                        <input class="form-control" type="number" name="Age" placeholder="Enter your Age" min='0' required />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Gender</label>
-                        <select class="form-control form-select" name="gender" required>
+                        <select class="form-control form-select" name="Gender" required>
                             <option selected disabled value="">Select your Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Income</label> 
-                        <input class="form-control" type="number" name="income" placeholder="Enter your Income" min='0' required />
+                        <input class="form-control" type="number" name="Income" placeholder="Enter your Income" min='0' required />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Campaign Channel</label>
                         <select class="form-control form-select" name="CampaignChannel" required>
                             <option selected disabled value="">Select Campaign Channel</option>
-                            <option value="email">Email</option>
-                            <option value="social_media">Social Media</option>
-                            <option value="search_engine">Search Engine</option>
-                            <option value="referral">Referral</option>
+                            <option value="Email">Email</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Search Engine">Search Engine</option>
+                            <option value="Referral">Referral</option>
                             <option value="PPC">PPC</option>
 
                         </select>
@@ -66,27 +66,42 @@
 
                     <div class="mb-3">
                         <label class="form-label">Click Through Rate</label> 
-                        <input class="form-control" type="number" name="ClickThroughRate" placeholder="Enter your Click Through Rate" min='0' required />
+                        <input class="form-control" type="number" step="0.0001" name="ClickThroughRate" placeholder="Enter your Click Through Rate" min='0' required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Conversion Rate</label> 
+                        <input class="form-control" type="number" step="0.0001" name="ConversionRate" placeholder="Enter your Conversion Rate" min='0' required />
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Website Visit</label>  
-                        <input class="form-control" type="number" name="WebsiteVisit" placeholder="Enter your Website Visit" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="WebsiteVisits" placeholder="Enter your Website Visits" min='0' required />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Pages Per Visit</label>  
-                        <input class="form-control" type="number" name="PagesPerVisit" placeholder="Enter your Pages Per Visit" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="PagesPerVisit" placeholder="Enter your Pages Per Visit" min='0' required />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Time On Site </label>  
-                        <input class="form-control" type="number" name="TimeOnSite" placeholder="Enter your Time On Site" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="TimeOnSite" placeholder="Enter your Time On Site" min='0' required />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Social Media Shares </label>  
                         <input class="form-control" type="number" name="SocialShares" placeholder="Enter the number of Social Media Shares" min='0' required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Opens</label>  
+                        <input class="form-control" type="number" name="EmailOpens" placeholder="Enter the number of Email Opens" min='0' required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Clicks</label>  
+                        <input class="form-control" type="number" name="EmailClicks" placeholder="Enter the number of Email Clicks" min='0' required />
                     </div>
 
                     <div class="mb-3">
