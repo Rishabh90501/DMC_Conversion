@@ -13,3 +13,10 @@ logging.basicConfig(
     format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO,
 )
+
+# also log to console for interactive runs
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+formatter = logging.Formatter("[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s")
+console_handler.setFormatter(formatter)
+logging.getLogger().addHandler(console_handler)
