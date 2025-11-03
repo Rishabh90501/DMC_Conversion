@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Customer Conversion Prediction Tool</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function resetForm() {
+            window.location.href = window.location.pathname;
+        }
+    </script>
 </head>
 <body>
     <div class="container py-5">
@@ -17,32 +22,32 @@
 
                     <div class="mb-3">
                         <label class="form-label">Age</label>
-                        <input class="form-control" type="number" name="Age" placeholder="Enter your Age" min='0' required />
+                        <input class="form-control" type="number" name="Age" placeholder="Enter your Age" min='0' required value="{{ request.form.get('Age','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Gender</label>
                         <select class="form-control form-select" name="Gender" required>
-                            <option selected disabled value="">Select your Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option disabled value="" {% if not request.form.get('Gender') %}selected{% endif %}>Select your Gender</option>
+                            <option value="Male" {% if request.form.get('Gender')=='Male' %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if request.form.get('Gender')=='Female' %}selected{% endif %}>Female</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Income</label> 
-                        <input class="form-control" type="number" name="Income" placeholder="Enter your Income" min='0' required />
+                        <input class="form-control" type="number" name="Income" placeholder="Enter your Income" min='0' required value="{{ request.form.get('Income','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Campaign Channel</label>
                         <select class="form-control form-select" name="CampaignChannel" required>
-                            <option selected disabled value="">Select Campaign Channel</option>
-                            <option value="Email">Email</option>
-                            <option value="Social Media">Social Media</option>
-                            <option value="Search Engine">Search Engine</option>
-                            <option value="Referral">Referral</option>
-                            <option value="PPC">PPC</option>
+                            <option disabled value="" {% if not request.form.get('CampaignChannel') %}selected{% endif %}>Select Campaign Channel</option>
+                            <option value="Email" {% if request.form.get('CampaignChannel')=='Email' %}selected{% endif %}>Email</option>
+                            <option value="Social Media" {% if request.form.get('CampaignChannel')=='Social Media' %}selected{% endif %}>Social Media</option>
+                            <option value="Search Engine" {% if request.form.get('CampaignChannel')=='Search Engine' %}selected{% endif %}>Search Engine</option>
+                            <option value="Referral" {% if request.form.get('CampaignChannel')=='Referral' %}selected{% endif %}>Referral</option>
+                            <option value="PPC" {% if request.form.get('CampaignChannel')=='PPC' %}selected{% endif %}>PPC</option>
 
                         </select>
                     </div>
@@ -50,79 +55,81 @@
                     <div class="mb-3">
                         <label class="form-label">Campaign Type</label>
                         <select class="form-control form-select" name="CampaignType" required>
-                            <option selected disabled value="">Select Campaign Type</option>
-                            <option value="Awareness">Awareness</option>
-                            <option value="Consideration">Consideration</option>
-                            <option value="Conversion">Conversion</option>
-                            <option value="Retention">Retention</option>
+                            <option disabled value="" {% if not request.form.get('CampaignType') %}selected{% endif %}>Select Campaign Type</option>
+                            <option value="Awareness" {% if request.form.get('CampaignType')=='Awareness' %}selected{% endif %}>Awareness</option>
+                            <option value="Consideration" {% if request.form.get('CampaignType')=='Consideration' %}selected{% endif %}>Consideration</option>
+                            <option value="Conversion" {% if request.form.get('CampaignType')=='Conversion' %}selected{% endif %}>Conversion</option>
+                            <option value="Retention" {% if request.form.get('CampaignType')=='Retention' %}selected{% endif %}>Retention</option>
 
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">AdSpend</label> 
-                        <input class="form-control" type="number" name="AdSpend" placeholder="Enter your Income" min='0' required />
+                        <input class="form-control" type="number" name="AdSpend" placeholder="Enter your Income" min='0' required value="{{ request.form.get('AdSpend','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Click Through Rate</label> 
-                        <input class="form-control" type="number" step="0.0001" name="ClickThroughRate" placeholder="Enter your Click Through Rate" min='0' required />
+                        <input class="form-control" type="number" step="0.0001" name="ClickThroughRate" placeholder="Enter your Click Through Rate" min='0' required value="{{ request.form.get('ClickThroughRate','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Conversion Rate</label> 
-                        <input class="form-control" type="number" step="0.0001" name="ConversionRate" placeholder="Enter your Conversion Rate" min='0' required />
+                        <input class="form-control" type="number" step="0.0001" name="ConversionRate" placeholder="Enter your Conversion Rate" min='0' required value="{{ request.form.get('ConversionRate','') }}" />
                     </div>
                     
                     <div class="mb-3">
                         <label class="form-label">Website Visit</label>  
-                        <input class="form-control" type="number" step="0.01" name="WebsiteVisits" placeholder="Enter your Website Visits" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="WebsiteVisits" placeholder="Enter your Website Visits" min='0' required value="{{ request.form.get('WebsiteVisits','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Pages Per Visit</label>  
-                        <input class="form-control" type="number" step="0.01" name="PagesPerVisit" placeholder="Enter your Pages Per Visit" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="PagesPerVisit" placeholder="Enter your Pages Per Visit" min='0' required value="{{ request.form.get('PagesPerVisit','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Time On Site </label>  
-                        <input class="form-control" type="number" step="0.01" name="TimeOnSite" placeholder="Enter your Time On Site" min='0' required />
+                        <input class="form-control" type="number" step="0.01" name="TimeOnSite" placeholder="Enter your Time On Site" min='0' required value="{{ request.form.get('TimeOnSite','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Social Media Shares </label>  
-                        <input class="form-control" type="number" name="SocialShares" placeholder="Enter the number of Social Media Shares" min='0' required />
+                        <input class="form-control" type="number" name="SocialShares" placeholder="Enter the number of Social Media Shares" min='0' required value="{{ request.form.get('SocialShares','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Email Opens</label>  
-                        <input class="form-control" type="number" name="EmailOpens" placeholder="Enter the number of Email Opens" min='0' required />
+                        <input class="form-control" type="number" name="EmailOpens" placeholder="Enter the number of Email Opens" min='0' required value="{{ request.form.get('EmailOpens','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Email Clicks</label>  
-                        <input class="form-control" type="number" name="EmailClicks" placeholder="Enter the number of Email Clicks" min='0' required />
+                        <input class="form-control" type="number" name="EmailClicks" placeholder="Enter the number of Email Clicks" min='0' required value="{{ request.form.get('EmailClicks','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Previous Purchases </label>  
-                        <input class="form-control" type="number" name="PreviousPurchases" placeholder="Enter the number of Previous Purchases" min='0' required />
+                        <input class="form-control" type="number" name="PreviousPurchases" placeholder="Enter the number of Previous Purchases" min='0' required value="{{ request.form.get('PreviousPurchases','') }}" />
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Loyalty Points</label>  
-                        <input class="form-control" type="number" name="LoyaltyPoints" placeholder="Enter the number of Loyalty Points" min='0' required />
+                        <input class="form-control" type="number" name="LoyaltyPoints" placeholder="Enter the number of Loyalty Points" min='0' required value="{{ request.form.get('LoyaltyPoints','') }}" />
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex gap-2">
                         <input class="btn btn-primary" type="submit" value="Predict Conversion Likelihood" />
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
                     </div>
                 </fieldset>
             </form>
 
             {% if results is defined %}
+                {% set label = 'Likely to Convert' if (results|int) == 1 else 'Not Likely to Convert' %}
                 <div class="alert alert-info">
-                    <strong>Prediction:</strong> {{ results }}
+                    <strong>Prediction:</strong> {{ label }}
                 </div>
             {% endif %}
         </div>
