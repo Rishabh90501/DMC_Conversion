@@ -22,13 +22,7 @@ def save_object(file_path, obj):
     
 def evaluate_models(X_train, y_train, X_test, y_test, models, params):
     try:
-        """
-        Evaluate each model using RandomizedSearchCV and return a tuple:
-        (report_dict, best_estimators_dict)
-
-        report_dict maps model_name -> metrics dict
-        best_estimators_dict maps model_name -> fitted best estimator
-        """
+        
 
         report = {}
         best_estimators = {}
